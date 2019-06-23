@@ -6,7 +6,7 @@
       <member :member="active_member"></member>
     <input type="text" placeholder="name" v-model="active_member.name"><br>
      <input type="text" placeholder="point" v-model="active_member.point"><br>
-      <input type="text" placeholder="name" v-model="active_member.img">
+      <input type="text" placeholder="url img" v-model="active_member.img">
     </div>
     <div v-else>
         <h1> Member App </h1>

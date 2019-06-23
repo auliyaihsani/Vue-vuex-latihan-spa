@@ -1,10 +1,12 @@
 <template>
   <div class="sidebar">
   <h2>Sidebar</h2>
-   <member v-for="member in members" :key="member.img" :member="member" @click.native.prevent="showMember(member)"></member>
+   <member v-for="member in members" :key="member.img" :member="member"  :allowRemove="true" @click.native.prevent="showMember(member)"></member>
+
 
    <div id="actions">
      <a href="#" @click.prevent="showMembers()">semua member</a>
+     <a href="#" @click.prevent="addMember()">add member</a>
    </div>
   </div>
 </template>
@@ -25,7 +27,8 @@ export default {
     methods: {
       ...mapActions([
       'showMember',
-      'showMembers'
+      'showMembers',
+      'addMember'
       ])
     }
 }
@@ -35,5 +38,9 @@ export default {
 <style scoped>
 .sidebar{
   flex: 1;
+}
+
+#actions a{
+  display: block;
 }
 </style>
