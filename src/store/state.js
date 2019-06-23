@@ -1,4 +1,6 @@
 export default {
+  active_member: null,
+  singleView : false,
     members : [
         {
             id:1,

@@ -16,3 +16,10 @@ export default {
   ]
 }
 </script>
+
+<style>
+.sidebar img {
+  width: 100px;
+}
+
+</style>

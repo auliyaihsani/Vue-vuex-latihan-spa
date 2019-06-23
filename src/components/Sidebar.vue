@@ -1,13 +1,17 @@
 <template>
   <div class="sidebar">
   <h2>Sidebar</h2>
-   <member v-for="member in members" :key="member.img" :member="member"></member>
+   <member v-for="member in members" :key="member.img" :member="member" @click.native.prevent="showMember(member)"></member>
+
+   <div id="actions">
+     <a href="#" @click.prevent="showMembers()">semua member</a>
+   </div>
   </div>
 </template>
 
 <script>
 import Member from './Member'
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
     computed : {
@@ -17,6 +21,12 @@ export default {
     },
     components :{
       Member
+    },
+    methods: {
+      ...mapActions([
+      'showMember',
+      'showMembers'
+      ])
     }
 }
 </script>

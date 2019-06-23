@@ -1,7 +1,18 @@
-n<template>
+<template>
   <div class="mainview">
-      <h1> Member App </h1>
+    <div v-if="singleView">
+      <!-- ambil satu data -->
+      <h1>SingleView</h1>
+      <member :member="active_member"></member>
+    <input type="text" placeholder="name" v-model="active_member.name"><br>
+     <input type="text" placeholder="point" v-model="active_member.point"><br>
+      <input type="text" placeholder="name" v-model="active_member.img">
+    </div>
+    <div v-else>
+        <h1> Member App </h1>
     <member v-for="member in members" :key="member.img" :member="member"></member>
+
+    </div>
   </div>
 </template>
 
@@ -12,7 +23,9 @@ import { mapGetters } from "vuex";
 export default {
     computed : {
         ...mapGetters([
-            'members'
+          'active_member',
+            'members',
+            'singleView'
         ])
     },
     components :{
@@ -41,6 +54,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #d4f3e5;
 }
 </style>
